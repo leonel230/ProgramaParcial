@@ -1,0 +1,30 @@
+ELIMINAR:
+
+
+
+
+txtNombre.setText("");
+        txtPuesto.setText("");
+        txtSalario.setText("");
+        txtSuelExtra.setText("");
+        txtBonif.setText("");
+        txtIsr.setText("");
+        TxtHEx.setText("");
+           txtIgss.setText("");
+        txt_search.setText("");
+        DefaultTableModel model=(DefaultTableModel) tblDatos.getModel();
+        int a = tblDatos.getSelectedRow();
+        if (a<0){
+            JOptionPane.showMessageDialog(null,
+                "Debe Seleccionar a un Empleado");
+        }
+        else
+        {
+            int Confirmar=JOptionPane.showConfirmDialog(null,
+                "Esta seguro que desea Eliminar el Registro de Empleado");
+            if (JOptionPane.OK_OPTION==Confirmar){
+                model.removeRow(a);
+                JOptionPane.showMessageDialog(null,
+                    "Registro de Empleado Eliminado de la planilla");
+            }
+        }   
