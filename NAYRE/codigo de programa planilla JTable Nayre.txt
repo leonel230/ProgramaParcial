@@ -1,0 +1,69 @@
+// VARIABLE CÓDIGO DE EMPLEADO EN LA TABLA //
+    int ICod=0;
+
+/////////// SE AGREGA EL DECIMAL FORMAT PARA DECIMALES 
+         DecimalFormat SueldoLiquid = new DecimalFormat("0.0");
+         /////////// DECLARACION DE VARIABLES STRING FLOAT INT 
+            float Sueldos;
+            int HoraEx; float HEx;
+            float BonifLeg = 250;
+            String NombreEmp;
+            NombreEmp=TxtNombre.getText();
+            Sueldos=Integer.parseInt(txtSalario.getText());
+            HoraEx=Integer.parseInt(TxtHEx.getText());
+           //// HEx VARIABLE QUE SE UTILIZA POR LA HORAS TRABAJADAS EXTRAS DEL EMPLEADO
+            HEx=(float) (1.5*HoraEx);
+            //////**** SE UTILIZA RANDOM PARA EL SUELDO SEA MAYOR O IGUAL AL MINIMO 2825.10
+            Sueldos=(int)(Math.random()*2825.10+2826.10);
+            ////**** COMANDO MATH Y RANDOM PARA OTROS INGRESOS QUE TENGA EL EMPLEADO EN NOMINA
+            int OtrosIng = (int)(Math.random()*3500+1);
+          ////**** COMANDO MATH Y RANDOM PARA OTROS GASTOS QUE TENGA EL EMPLEADO EN NOMINA
+            int OtrosGastos = (int)(Math.random()*1000+1);
+            ////////////**** AQUI EMPIEZA LOS CICLOS DE IF Y ELSE IF PARA EL SALARIO BRUTO PARA NOMINA EMPLEADO
+            float SalarioBruto;
+            SalarioBruto = (float) (Sueldos+HEx+BonifLeg+OtrosIng);
+            //////***** Se declara lo siguiente para descuentos de sueldo bruto al empleado ISR IGSS 
+            
+            /////***** ISR TIENE DIFERENTES DESCUENTOS SEGUN EL SUELDO BRUTO DE CADA EMPLEADO
+            float IsrE=0;
+            if(SalarioBruto>6000&&SalarioBruto<8000){
+                IsrE=(float) (SalarioBruto*0.05);
+            }
+            else if(SalarioBruto>8000&&SalarioBruto<9500){
+                IsrE=(float) (SalarioBruto*0.06);
+            }
+            else if(SalarioBruto>9500){
+                IsrE=(float) (SalarioBruto*0.08);
+            }
+            ///**** IGSS SE LE DESCUENTA A TODOS LOS EMPLEADOS SU CUOTA 
+            float IgssE;
+            IgssE=(float) (SalarioBruto*0.0483);
+            /////***** TOTAL QUE RECIBE EL EMPLEADO AL FINAL DE DEBITARLE LOS DESCUENTOS DE LEY
+            float TotDesc;
+            TotDesc = IsrE+IgssE+OtrosGastos;
+            
+            float TSuelLiquido=0;
+            TSuelLiquido=SalarioBruto-TotDesc;
+            ///////***** DECLARACION DE LA TABLA DE EMPLEADO EN LA PLANILLA 
+            Object[] fila = new Object[13];
+            DefaultTableModel modelo = (DefaultTableModel) tblDatos.getModel();
+            ICod++;
+            fila [0]=String.valueOf(ICod);
+            fila [1]=NombreEmp;
+            fila [2]=ComboxPuesto.getSelectedItem().toString();
+            fila [3]=String.valueOf(Sueldos);
+            fila [4]=String.valueOf(SueldoLiquid.format(HEx));
+            fila [5]=String.valueOf(SueldoLiquid.format(BonifLeg));
+            fila [6]=String.valueOf(SueldoLiquid.format(OtrosIng));
+            fila [7]=String.valueOf(SueldoLiquid.format(SalarioBruto));
+            fila [8]=String.valueOf(SueldoLiquid.format(IgssE));
+            fila [9]=String.valueOf(SueldoLiquid.format(IsrE));
+            fila [10]=String.valueOf(SueldoLiquid.format(OtrosGastos));
+            fila [11]=String.valueOf(SueldoLiquid.format(TotDesc));
+            fila [12]=String.valueOf(SueldoLiquid.format(TSuelLiquido));
+            modelo.addRow(fila);
+            tblDatos.setModel(modelo);
+        
+        {
+            JOptionPane.showMessageDialog(null, "VERIFIQUE LA INFORMACIÓN DEL EMPLEADO SEA CORRECTA ");
+        }
