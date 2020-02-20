@@ -1,0 +1,30 @@
+private void jMenuItem19ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+            Desktop browser = Desktop.getDesktop();
+  try{
+    try {
+        browser.browse(new URI("https://github.com/TagoSMD/Programa1."));
+    } catch (URISyntaxException ex) {
+      
+    }
+  }
+  catch(IOException err){
+      
+  }
+    
+
+        
+    }                                           
+
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        // TODO add your handling code here:
+           Desktop browser = Desktop.getDesktop();
+  try{
+    try {
+        browser.browse(new URI("https://www.youtube.com/watch?v=3vauM7axnRs"));
+    } catch (URISyntaxException ex) {
+       
+    }
+  }
+  catch(IOException err){
+      
