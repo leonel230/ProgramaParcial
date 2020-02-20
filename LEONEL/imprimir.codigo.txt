@@ -1,0 +1,13 @@
+Impresión de Tabla Nomina de Empleados:
+
+
+         MessageFormat header = new MessageFormat("Nomina");
+         MessageFormat footer = new MessageFormat("Page{0,number,integer}");
+        try{
+            tblDatos.print(JTable.PrintMode.NORMAL, header, footer);
+            
+        }catch(java.awt.print.PrinterException e){
+            System.err.format("Error de impresion",  e.getMessage());
+            
+        }
+  
