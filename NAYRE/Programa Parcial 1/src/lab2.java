@@ -60,6 +60,7 @@ PreparedStatement pst=null;
         txtPuesto = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
@@ -72,6 +73,7 @@ PreparedStatement pst=null;
         jMenuItem19 = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -79,7 +81,6 @@ PreparedStatement pst=null;
         jPanel3.setLayout(null);
 
         CmdAceptar.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 12)); // NOI18N
-        CmdAceptar.setIcon(new javax.swing.ImageIcon("C:\\Users\\ThinkPad E480\\Desktop\\ICONOS\\favicon (2).png")); // NOI18N
         CmdAceptar.setText("Ingresar Informacion:");
         CmdAceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         CmdAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -303,19 +304,20 @@ PreparedStatement pst=null;
         jPanel3.add(jPanel1);
         jPanel1.setBounds(0, 0, 810, 320);
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\ThinkPad E480\\Desktop\\Best-Employee-Management-Software-for-My-Business.jpg")); // NOI18N
         jLabel11.setText("jLabel11");
         jPanel3.add(jLabel11);
         jLabel11.setBounds(-2, 0, 1160, 740);
 
+        jButton1.setText("jButton1");
+        jPanel3.add(jButton1);
+        jButton1.setBounds(870, 240, 93, 29);
+
         jMenu5.setForeground(new java.awt.Color(0, 204, 0));
-        jMenu5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ThinkPad E480\\Desktop\\ICONOS\\favicon (5).png")); // NOI18N
         jMenu5.setText("Base De Datos");
         jMenu5.setFont(new java.awt.Font("Elephant", 3, 18)); // NOI18N
 
         jMenuItem5.setFont(new java.awt.Font("Elephant", 2, 14)); // NOI18N
         jMenuItem5.setForeground(new java.awt.Color(0, 153, 0));
-        jMenuItem5.setIcon(new javax.swing.ImageIcon("C:\\Users\\ThinkPad E480\\Desktop\\ICONOS\\favicon (5).png")); // NOI18N
         jMenuItem5.setText("Añadir");
         jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -340,7 +342,6 @@ PreparedStatement pst=null;
 
         jMenuItem4.setFont(new java.awt.Font("Elephant", 3, 14)); // NOI18N
         jMenuItem4.setForeground(new java.awt.Color(153, 153, 0));
-        jMenuItem4.setIcon(new javax.swing.ImageIcon("C:\\Users\\ThinkPad E480\\Desktop\\ICONOS\\favicon.jpg")); // NOI18N
         jMenuItem4.setText("Imprimir");
         jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -373,7 +374,6 @@ PreparedStatement pst=null;
 
         jMenuItem19.setFont(new java.awt.Font("Elephant", 2, 14)); // NOI18N
         jMenuItem19.setForeground(new java.awt.Color(0, 0, 204));
-        jMenuItem19.setIcon(new javax.swing.ImageIcon("C:\\Users\\ThinkPad E480\\Downloads\\favicon (1).png")); // NOI18N
         jMenuItem19.setText("GITHUB");
         jMenuItem19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -390,7 +390,6 @@ PreparedStatement pst=null;
 
         jMenuItem10.setFont(new java.awt.Font("Elephant", 2, 14)); // NOI18N
         jMenuItem10.setForeground(new java.awt.Color(255, 0, 51));
-        jMenuItem10.setIcon(new javax.swing.ImageIcon("C:\\Users\\ThinkPad E480\\Downloads\\favicon (3).png")); // NOI18N
         jMenuItem10.setText("CANAL DE YOUTUBE");
         jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -398,6 +397,14 @@ PreparedStatement pst=null;
             }
         });
         jMenu6.add(jMenuItem10);
+
+        jMenuItem2.setText("Canal de Youtube2");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem2);
 
         jMenuBar1.add(jMenu6);
 
@@ -734,6 +741,21 @@ PreparedStatement pst=null;
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+                   Desktop browser = Desktop.getDesktop();
+  try{
+    try {
+        browser.browse(new URI("https://www.youtube.com/watch?v=3vauM7axnRs1111"));
+    } catch (URISyntaxException ex) {
+       
+    }
+  }
+  catch(IOException err){
+      
+  }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     
     public static void main(String args[]) {
       
@@ -747,6 +769,7 @@ PreparedStatement pst=null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CmdAceptar;
     private javax.swing.JTextField TxtHEx;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -767,6 +790,7 @@ PreparedStatement pst=null;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem19;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem8;
