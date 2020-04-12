@@ -452,7 +452,8 @@ PreparedStatement pst=null;
          DecimalFormat SueldoLiquid = new DecimalFormat("0.0");
          /////////// DECLARACION DE VARIABLES STRING FLOAT INT 
             float Sueldos;
-            int HoraEx; float HEx;
+            int HoraEx,OtrosIng,OtrosGastos,SuelExtra; /// se Agrego nuevos int
+            float HEx;
             float BonifLeg = 250;
             String NombreEmp;
             String PuestoE;
@@ -460,14 +461,12 @@ PreparedStatement pst=null;
             PuestoE=txtPuesto.getText();
             Sueldos=Integer.parseInt(txtSalario.getText());
             HoraEx=Integer.parseInt(TxtHEx.getText());
+            SuelExtra=Integer.parseInt(txtSuelExtra.getText());
+            OtrosIng= 0;
+            OtrosGastos= 0;
            //// HEx VARIABLE QUE SE UTILIZA POR LA HORAS TRABAJADAS EXTRAS DEL EMPLEADO
-            HEx=(float) (1.5*HoraEx);
-            //////**** SE UTILIZA RANDOM PARA EL SUELDO SEA MAYOR O IGUAL AL MINIMO 2825.10
-            Sueldos=(int)(Math.random()*2825.10+2826.10);
-            ////**** COMANDO MATH Y RANDOM PARA OTROS INGRESOS QUE TENGA EL EMPLEADO EN NOMINA
-            int OtrosIng = (int)(Math.random()*3500+1);
-          ////**** COMANDO MATH Y RANDOM PARA OTROS GASTOS QUE TENGA EL EMPLEADO EN NOMINA
-            int OtrosGastos = (int)(Math.random()*1000+1);
+            HEx=(float) (1.5*HoraEx+SuelExtra); ///se le agrega como suma a la hora estra el sueldo extra.
+           
             ////////////**** AQUI EMPIEZA LOS CICLOS DE IF Y ELSE IF PARA EL SALARIO BRUTO PARA NOMINA EMPLEADO
             float SalarioBruto;
             SalarioBruto = (float) (Sueldos+HEx+BonifLeg+OtrosIng);
