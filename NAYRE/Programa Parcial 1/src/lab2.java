@@ -311,7 +311,7 @@ PreparedStatement pst=null;
 
         jButton1.setText("jButton1");
         jPanel3.add(jButton1);
-        jButton1.setBounds(870, 240, 93, 29);
+        jButton1.setBounds(870, 240, 73, 23);
 
         jMenu5.setForeground(new java.awt.Color(0, 204, 0));
         jMenu5.setText("Base De Datos");
@@ -407,7 +407,11 @@ PreparedStatement pst=null;
         });
         jMenu6.add(jMenuItem2);
 
+<<<<<<< HEAD
         jMenuItem3.setText("Canal de youtube4");
+=======
+        jMenuItem3.setText("Canal de youtube3");
+>>>>>>> 37977872eebcfa94cd1ca89830cbb9eea1d487b7
         jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem3ActionPerformed(evt);
@@ -730,6 +734,11 @@ PreparedStatement pst=null;
 
                         
            
+                        
+                        
+                        
+                        
+                        
                // pst=conn.prepareStatement(sql);
                 pst.execute();
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
@@ -767,11 +776,18 @@ PreparedStatement pst=null;
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+<<<<<<< HEAD
      
                    Desktop browser = Desktop.getDesktop();
   try{
     try {
         browser.browse(new URI("https://www.youtube.com/watch?v=3va32312uM7axnRs1111"));
+=======
+                           Desktop browser = Desktop.getDesktop();
+  try{
+    try {
+        browser.browse(new URI("https://www.youtube.com/watch?v=3vauM7axnRs1111sdasdasd"));
+>>>>>>> 37977872eebcfa94cd1ca89830cbb9eea1d487b7
     } catch (URISyntaxException ex) {
        
     }

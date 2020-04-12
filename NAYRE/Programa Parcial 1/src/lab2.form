@@ -155,7 +155,11 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
               <Properties>
+<<<<<<< HEAD
                 <Property name="text" type="java.lang.String" value="Canal de youtube4"/>
+=======
+                <Property name="text" type="java.lang.String" value="Canal de youtube3"/>
+>>>>>>> 37977872eebcfa94cd1ca89830cbb9eea1d487b7
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
