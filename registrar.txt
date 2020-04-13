@@ -1,0 +1,21 @@
+   //Codigo que permite insertar registros en al base de datos
+        try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/covid", "root", "");
+            PreparedStatement pst = cn.prepareStatement("insert into empleados values(?,?,?,?,?,?,?)");
+
+            pst.setString(1, "0");
+            pst.setString(2, txt_direccion.getText().trim());
+            pst.setString(3, txt_departamento.getText().trim());
+            pst.setString(4, txt_codigoasignado.getText().trim());
+            pst.setString(5, txt_telefono.getText().trim());
+            pst.setString(6, txt_puestoasignado.getText().trim());
+            pst.executeUpdate();
+
+            txt_nombre.setText("");
+            txt_direccion.setText("");
+            label_status.setText("Registro exitoso.");
+        }catch (Exception e){
+
+        }
+
+    }                                        

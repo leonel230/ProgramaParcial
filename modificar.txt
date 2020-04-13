@@ -1,0 +1,19 @@
+  //Codigo que permite actualizar registros en la base de datos
+        try {
+            String ID = txt_buscar.getText().trim();
+
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/covid", "root", "");
+            PreparedStatement pst = cn.prepareStatement("update empleados set NombreDelEmpleado = ?, Direccion = ?, Departamento = ?, CodigoAsignado = ?, Telefono = ?, PuestoAsignado = ?,  where ID = " + ID);
+
+            pst.setString(1, txt_nombre.getText().trim());
+            pst.setString(2, txt_direccion.getText().trim());
+            pst.setString(3, txt_departamento.getText().trim());
+            pst.setString(4, txt_codigoasignado.getText().trim());
+            pst.setString(5, txt_telefono.getText().trim());
+            pst.setString(6, txt_puestoasignado.getText().trim());
+            pst.executeUpdate();
+
+            label_status.setText("Modificación exitosa.");
+
+        } catch (Exception e) {
+        }

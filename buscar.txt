@@ -1,0 +1,18 @@
+ //Codigo que nos permite consultar registros en la base de datos
+        try{
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/covid", "root", "");
+            PreparedStatement pst = cn.prepareStatement("select * from empleados where ID = ?");
+            pst.setString(1, txt_buscar.getText().trim());
+
+            ResultSet rs = pst.executeQuery();
+
+            if(rs.next()){
+                txt_nombre.setText(rs.getString("NombreDelEmpleado"));
+                txt_departamento.setText(rs.getString("Departamento"));
+            } else {
+                JOptionPane.showMessageDialog(null, "Alumno no registrado.");
+            }
+
+        }catch (Exception e){
+
+        }

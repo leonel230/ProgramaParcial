@@ -1,0 +1,21 @@
+   //Codigo que permite borrar registros en la base de datos
+        try {
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/covid", "root", "");
+            PreparedStatement pst = cn.prepareStatement("delete from empleados where ID = ?");
+
+            pst.setString(1, txt_buscar.getText().trim());
+            pst.executeUpdate();
+
+            txt_nombre.setText("");
+            txt_direccion.setText("");
+            txt_departamento.setText("");
+            txt_codigoasignado.setText("");
+            txt_telefono.setText("");
+            txt_puestoasignado.setText("");
+            
+            txt_buscar.setText("");
+
+            label_status.setText("Registro eliminado.");
+
+        } catch (Exception e) {
+        }
