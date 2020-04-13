@@ -1,0 +1,13 @@
+CREATE DATABASE nomina2;
+USE nomina2;
+CREATE TABLE Nomina
+(
+
+ID int (20) auto_increment PRIMARY KEY,
+Nombre VARCHAR(60) NOT NULL,
+Telefono VARCHAR(60) NOT NULL,
+Dirrecion VARCHAR(60) NOT NULL,
+CORREO VARCHAR(60) NOT NULL,
+Deprtamento VARCHAR(60) NOT NULL
+)
+
