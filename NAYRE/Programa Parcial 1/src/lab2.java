@@ -74,6 +74,7 @@ PreparedStatement pst=null;
         jMenu6 = new javax.swing.JMenu();
         jMenuItem10 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(204, 204, 204));
@@ -310,7 +311,7 @@ PreparedStatement pst=null;
 
         jButton1.setText("jButton1");
         jPanel3.add(jButton1);
-        jButton1.setBounds(870, 240, 93, 29);
+        jButton1.setBounds(870, 240, 73, 23);
 
         jMenu5.setForeground(new java.awt.Color(0, 204, 0));
         jMenu5.setText("Base De Datos");
@@ -406,6 +407,14 @@ PreparedStatement pst=null;
         });
         jMenu6.add(jMenuItem2);
 
+        jMenuItem3.setText("Canal de youtube3");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu6.add(jMenuItem3);
+
         jMenuBar1.add(jMenu6);
 
         setJMenuBar(jMenuBar1);
@@ -443,7 +452,8 @@ PreparedStatement pst=null;
          DecimalFormat SueldoLiquid = new DecimalFormat("0.0");
          /////////// DECLARACION DE VARIABLES STRING FLOAT INT 
             float Sueldos;
-            int HoraEx; float HEx;
+            int HoraEx,OtrosIng,OtrosGastos,SuelExtra; /// se Agrego nuevos int
+            float HEx;
             float BonifLeg = 250;
             String NombreEmp;
             String PuestoE;
@@ -451,14 +461,12 @@ PreparedStatement pst=null;
             PuestoE=txtPuesto.getText();
             Sueldos=Integer.parseInt(txtSalario.getText());
             HoraEx=Integer.parseInt(TxtHEx.getText());
+            SuelExtra=Integer.parseInt(txtSuelExtra.getText());
+            OtrosIng= 0;
+            OtrosGastos= 0;
            //// HEx VARIABLE QUE SE UTILIZA POR LA HORAS TRABAJADAS EXTRAS DEL EMPLEADO
-            HEx=(float) (1.5*HoraEx);
-            //////**** SE UTILIZA RANDOM PARA EL SUELDO SEA MAYOR O IGUAL AL MINIMO 2825.10
-            Sueldos=(int)(Math.random()*2825.10+2826.10);
-            ////**** COMANDO MATH Y RANDOM PARA OTROS INGRESOS QUE TENGA EL EMPLEADO EN NOMINA
-            int OtrosIng = (int)(Math.random()*3500+1);
-          ////**** COMANDO MATH Y RANDOM PARA OTROS GASTOS QUE TENGA EL EMPLEADO EN NOMINA
-            int OtrosGastos = (int)(Math.random()*1000+1);
+            HEx=(float) (1.5*HoraEx+SuelExtra); ///se le agrega como suma a la hora estra el sueldo extra.
+           
             ////////////**** AQUI EMPIEZA LOS CICLOS DE IF Y ELSE IF PARA EL SALARIO BRUTO PARA NOMINA EMPLEADO
             float SalarioBruto;
             SalarioBruto = (float) (Sueldos+HEx+BonifLeg+OtrosIng);
@@ -721,6 +729,11 @@ PreparedStatement pst=null;
 
                         
            
+                        
+                        
+                        
+                        
+                        
                // pst=conn.prepareStatement(sql);
                 pst.execute();
                 JOptionPane.showMessageDialog(null, "Datos Actualizados");
@@ -755,6 +768,22 @@ PreparedStatement pst=null;
       
   }
     }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+                           Desktop browser = Desktop.getDesktop();
+  try{
+    try {
+        browser.browse(new URI("https://www.youtube.com/watch?v=3vauM7axnRs1111sdasdasd"));
+        
+    } catch (URISyntaxException ex) {
+       
+    }
+  }
+  catch(IOException err){
+      
+  }
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     
     public static void main(String args[]) {
@@ -791,6 +820,7 @@ PreparedStatement pst=null;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem19;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem8;
